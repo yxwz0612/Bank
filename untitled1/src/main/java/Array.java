@@ -19,7 +19,7 @@ public class Array {
        // numbers.length 获得数组长度
     //    System.out.println(numbers[0]);
 
-        printArray(numbers2[printArray(numbers2)]);
+        printArray(numbers);
 
 
 
@@ -29,12 +29,13 @@ public class Array {
     }
 
     //打印数组
-    public static int printArray(int[] array){
+    public static  void printArray(int[] array){
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
-            return i;
 
-        }
+
+
+        }return;
 
 
 
