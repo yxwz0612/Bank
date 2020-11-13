@@ -12,6 +12,7 @@ public class Account extends AccountMould{
 
 
 
+
     public void saveLog(String type) {
         AccountLog accountLog = new AccountLog();
         accountLog.type = type;

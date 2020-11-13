@@ -8,16 +8,16 @@ import java.util.List;
 
 public abstract class Wallet implements WalletInterfase{
     int walletID;
-    BigDecimal balance;
+    BigDecimal balance = BigDecimal.valueOf(0);
     BigDecimal beused;
     List<WalletLog> log = new LinkedList<WalletLog>();
 
 
 
-    public void save(Wallet wallet, BigDecimal money) {
+    public void save(BigDecimal money) {
 
-        wallet.balance = wallet.balance.add(money);
-        saveLog(wallet,"存入",money);
+        this.balance = this.balance.add(money);
+        saveLog(this,"存入",money);
 
 
     }
@@ -31,17 +31,17 @@ public abstract class Wallet implements WalletInterfase{
 
     }
 
-    public void checkLog(Wallet wallet) {
-        for (int i = 0; i < wallet.log.size(); i++) {
-            System.out.println(wallet.log.get(i));//逐条打印该钱包log日志
+    public void checkLog() {
+        for (int i = 0; i < log.size(); i++) {
+            System.out.println(log.get(i).type+"\t"+log.get(i).money+"\t"+log.get(i).date);//逐条打印该钱包log日志
         }
 
     }
 
 
-    public void checkBanlance(Wallet wallet) {
+    public void checkBanlance() {
 
-        System.out.println(wallet.balance);//打印余额
+        System.out.println(this.balance);//打印余额
 
     }
 
